@@ -15,7 +15,7 @@ const userSchema = db.Schema({
   },
   created_at: {
     type: Date,
-    default: Date.now
+    default: Date()
   }
 })
 

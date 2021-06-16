@@ -1,7 +1,7 @@
 const static = require('./api/static')
-const user = require('./api/user')
+const userRoute = require('./api/userRoute')
 
 module.exports = {
   static,
-  user
+  userRoute
 }
