@@ -8,10 +8,15 @@ require('dotenv').config()
 app.use(cors())
 app.use(bodyParser.json())
 
-const { static, userRoute } = require('./routes')
+app.set('view engine', 'html')
 
-app.use('/', static)
+const { userRoute } = require('./routes')
+
 app.use('/user', userRoute)
+
+app.get('*', (req, res) => {
+  res.status(404).sendFile(__dirname + '/static/404.html')
+})
 
 db.connect(process.env.DB_HOST, { useNewUrlParser: true, useUnifiedTopology: true }, () => {})
 
