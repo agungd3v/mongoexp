@@ -5,13 +5,20 @@ const userSchema = db.Schema({
     type: String,
     default: null
   },
-  gender: {
+  username: {
     type: String,
-    default: null
+    required: true,
+    unique: true
   },
-  age: {
-    type: Number,
-    default: null
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true,
+    select: false
   },
   created_at: {
     type: Date,

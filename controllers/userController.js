@@ -1,3 +1,4 @@
+const hash = require('password-hash')
 const userModel = require('../models/userModel')
 
 const userController = {
@@ -12,8 +13,9 @@ const userController = {
   store: async (req, res) => {
     const data = new userModel({
       name: req.body.name,
-      gender: req.body.gender,
-      age: req.body.age
+      username: req.body.username,
+      email: req.body.email,
+      password: hash.generate(req.body.password)
     })
     try {
       const store = await data.save()
@@ -34,8 +36,9 @@ const userController = {
     try {
       const data = await userModel.updateOne({ _id: req.params.userId }, { $set: {
           name: req.body.name,
-          gender: req.body.gender,
-          age: req.body.age
+          username: req.body.username,
+          email: req.body.email,
+          password: hash.generate(req.body.password)
         }
       })
       res.json({ status: true, message: data })
