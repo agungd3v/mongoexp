@@ -29,7 +29,7 @@ const authController = {
     if (user) {
       const passwordVerify = hash.verify(password, user.password)
       if (passwordVerify) {
-        const accessToken = jwt.sign({ email: user.email, id: user._id }, process.env.SECRET_TOKEN, { expiresIn: '1h' })
+        const accessToken = jwt.sign({ email: user.email, id: user._id }, process.env.SECRET_TOKEN, { expiresIn: '1d' })
         res.json({
           status: true,
           message: {
