@@ -45,6 +45,12 @@ const authController = {
     } else {
       res.json({ status: false, message: 'Incorrect email or username or password' })
     }
+  },
+  checkToken: (req, res) => {
+    const { token } = req.body
+    jwt.verify(token, process.env.SECRET_TOKEN, (err, user) => {
+      err ? res.json({ status: true }) : res.json({ status: false })
+    })
   }
 }
 
