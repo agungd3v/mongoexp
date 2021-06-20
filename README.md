@@ -12,6 +12,12 @@ $ npm install -g nodemon
 $ cp .env.example / copy .env.example
 
 # working with .env
-// APP_PORT=YOUR_PORT
-// DB_HOST=YOUR_MONGODB_URI
-// SECRET_TOKEN=YOUR_SECRET_TOKEN
+APP_PORT=YOUR_PORT
+DB_HOST=YOUR_MONGODB_URI
+SECRET_TOKEN=YOUR_SECRET_TOKEN
+
+# run with node
+$ node index.js
+
+# run with nodemon
+$ nodemon
