@@ -9,7 +9,7 @@ $ yarn install / npm install
 $ npm install -g nodemon
 
 # using .env
-$ cp .env.example / copy .env.example
+$ cp .env.example .env / copy .env.example .env
 
 # working with .env
 APP_PORT=YOUR_PORT
