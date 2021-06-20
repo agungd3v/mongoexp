@@ -3,13 +3,13 @@
 
 ```bash
 # install dependencies
-$ yarn install / npm install
+$ yarn install OR npm install
 
 # if you want to run use nodemon
 $ npm install -g nodemon
 
 # using .env
-$ cp .env.example .env / copy .env.example .env
+$ cp .env.example .env OR copy .env.example .env
 
 # working with .env
 APP_PORT=YOUR_PORT
