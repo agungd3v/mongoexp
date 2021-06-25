@@ -1,12 +1,17 @@
 const nodemailer = require('nodemailer')
 
-module.exports = nodemailer.createTransport({
-  pool: true,
-  host: 'srv118.niagahoster.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: 'sales@coompact.id',
-    pass: 'coompact:443'
+const mailer = (host, user, pass) => {
+  const config = {
+    pool: true,
+    host: host,
+    port: 465,
+    secure: true,
+    auth: {
+      user: user,
+      pass: pass
+    }
   }
-})
+  return nodemailer.createTransport(config)
+}
+
+module.exports = mailer
